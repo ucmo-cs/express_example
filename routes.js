@@ -3,6 +3,7 @@ const express = require('express'),
   db = require('./db');
   path = require("path");
 
+// Static route for index.html
 router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
