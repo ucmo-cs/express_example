@@ -30,4 +30,13 @@ router.post('/cars', function(req, res) {
   })
 });
 
+router.delete('/cars/:id', function(req,res) {
+  const { id } = req.params;
+  let sql = `DELETE FROM car WHERE ID=(?)`;
+  db.query(sql, [id], function(err, data, fields) {
+    if (err) throw err;
+    res.json(data);
+  })
+});
+
 module.exports = router;
