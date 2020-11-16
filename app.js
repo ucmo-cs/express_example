@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Static routes come from the ./client directory
-app.use(express.static('client'))
+app.use(express.static('client/build'))
+app.use(express.static('client/build/static'))
 
 // Use the Express routes in routes.js
 app.use('/', routes);
